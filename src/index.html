@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark"/>
+  <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.jade.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css" rel="stylesheet"/>
+  <link href="index.css" rel="stylesheet"/>
+  <title>Farming Simulator 22 Agriculture Guide</title>
+
+</head>
+<body>
+  <header>
+    <h1>Farming Simulator 22 Agriculture Guide</h1>
+  </header>
+  <main id="guide">
+    <section id="controls" class="container-fluid">
+      <h3>Planning</h3>
+      <article>
+        <details open>
+          <summary>Select field options</summary>
+          <div class="grid">
+            <div>
+              <fieldset>
+                <legend>Crop</legend>
+                <label><input type="radio" name="crop" value="wheat">Wheat</label>
+                <label><input type="radio" name="crop" value="barley">Barley</label>
+                <label><input type="radio" name="crop" value="canola">Canola</label>
+                <label><input type="radio" name="crop" value="oat">Oat</label>
+                <label><input type="radio" name="crop" value="corn">Corn</label>
+                <label><input type="radio" name="crop" value="sunflowers">Sunflowers</label>
+                <label><input type="radio" name="crop" value="soybeans">Soybeans</label>
+                <label><input type="radio" name="crop" value="potatoes">Potatoes</label>
+                <label><input type="radio" name="crop" value="sugar-beet">Sugar Beet</label>
+                <label><input type="radio" name="crop" value="sugarcane">Sugarcane</label>
+                <label><input type="radio" name="crop" value="cotton">Cotton</label>
+                <label><input type="radio" name="crop" value="sorghum">Sorghum</label>
+                <label><input type="radio" name="crop" value="grapes">Grapes</label>
+                <label><input type="radio" name="crop" value="olives">Olives</label>
+                <label><input type="radio" name="crop" value="poplar">Poplar</label>
+                <label><input type="radio" name="crop" value="grass">Grass</label>
+                <label><input type="radio" name="crop" value="oilseed-radish">Oilseed Radish</label>
+                <label><input type="radio" name="crop" value="red">Red</label>
+                <label><input type="radio" name="crop" value="carrots">Carrots</label>
+                <label><input type="radio" name="crop" value="parsnip">Parsnip</label>
+              </fieldset>
+            </div>
+            <div>
+              <fieldset>
+                <legend>Fertilizer</legend>
+                <label><input type="radio" name="fertilizer" value="solid-fertilizer"/> Solid fertilizer</label>
+                <label><input type="radio" name="fertilizer" value="liquid-fertilizer"/> Liquid fertilizer</label>
+                <label><input type="radio" name="fertilizer" value="slurry"/> Slurry</label>
+                <label><input type="radio" name="fertilizer" value="manure"/> Manure</label>
+                <label><input type="radio" name="fertilizer" value="digestate"/> Digestate</label>
+                <label><input type="radio" name="fertilizer" value="catch-crop"/> Catch crop (Oilseed Radish)</label>
+              </fieldset>
+              <fieldset>
+                <legend>Options</legend>
+                <label><input type="checkbox" role="switch" name="lime" value="lime-needed" checked/> Lime needed (every three harvests).</label>
+                <label><input type="checkbox" role="switch" name="plowing" value="plowing"/> Plowing (+15% yield, new or root crops).</label>
+                <label><input type="checkbox" role="switch" name="chaff" value="chaff"/> Harvest chaff.</label>
+              </fieldset>
+            </div>
+          </div>
+        </details>
+      </article>
+    </section>
+    <section id="planting" class="container-fluid">
+      <h2>Planting, day 1</h2>
+
+      <article id="liming">
+        <h3>Liming</h3>
+        <p class="subtitle"><em>Optional</em>, +15% yield.</p>
+        <p>Lasts three harvests. Lime can be acquired for free at a lime station, or brought at the shop.</p>
+        <div class="grid">
+          <article class="machine">
+            <header>Fertilizer Spreader</header>
+            <p>Uses <mark class="lime" data-tooltip="">Lime</mark>.</p>
+          </article>
+        </div>
+      </article>
+
+      <article id="fertilizing-1" class="fertilizing">
+        <h3>Fertilizing</h3>
+        <p class="subtitle"><em>Optional</em>, +22.5% yield.</p>
+        <p>Both fertilizing steps can also be done by harvesting Oilseed Radish.</p>
+        <p><em>The field HUD should show "Fertilized: 50%" after this step.</em></p>
+        <div class="grid">
+          <article class="machine solid-fertilizer">
+            <header>Fertilizer Spreader</header>
+            <p>Uses <mark class="solid-fertilizer">Solid fertilizer</mark>.</p>
+          </article>
+          <article class="machine liquid-fertilizer">
+            <header>Fertilizer Sprayer</header>
+            <p>Uses <mark class="liquid-fertilizer">Liquid fertilizer</mark>.</p>
+          </article>
+          <article class="machine slurry">
+            <header>Slurry Tank</header>
+            <p>Uses <mark class="slurry">Slurry</mark>.</p>
+          </article>
+          <article class="machine manure">
+            <header>Manure Spreader</header>
+            <p>Uses <mark class="manure">Manure</mark>.</p>
+          </article>
+          <article class="machine digestate">
+            <header>Slurry Tank</header>
+            <p>Uses <mark class="digestate">Digestate</mark>.</p>
+          </article>
+        </div>
+      </article>
+
+      <div class="grid">
+        <article id="plowing" class="plowing">
+          <h3>Plowing</h3>
+          <p class="subtitle">+15% yield.</p>
+          <p>
+            Required for new fields and root crops, optional for existing fields.
+            Usually slower than cultivation. </p>
+          <div class="grid">
+            <article class="machine">
+              <header>Plow</header>
+              <p>Higher yield (+15%)</p>
+              <p>Small stones</p>
+              <p>No weeds</p>
+            </article>
+            <article class="machine">
+              <header>Spader</header>
+              <p>Higher yield (+15%)</p>
+              <p>Small stones</p>
+              <p>Some weeds</p>
+            </article>
+            <article class="machine">
+              <header>Subsoiler</header>
+              <p>Higher yield (+15%)</p>
+              <p>Large stones</p>
+              <p>Some weeds</p>
+            </article>
+          </div>
+        </article>
+        <div>
+          <article id="mulching" class="cultivating">
+            <h3>Mulching</h3>
+            <article class="machine">
+              <header>???</header>
+              <p>???</p>
+            </article>
+          </article>
+          <article id="cultivating" class="cultivating">
+            <h3>Cultivating</h3>
+            <div class="grid">
+              <article class="machine">
+                <header>Cultivator</header>
+                <p>No yield bonus</p>
+                <p>Small stones</p>
+                <p>Some weeds</p>
+              </article>
+              <article class="machine">
+                <header>Shallow Cultivator</header>
+                <p>No yield bonus</p>
+                <p>No stones</p>
+                <p>More weeds</p>
+              </article>
+              <article class="machine">
+                <header>Disc Harrow</header>
+                <p>No yield bonus</p>
+                <p>No stones</p>
+                <p>More weeds</p>
+              </article>
+              <article class="machine">
+                <header>Power Harrow</header>
+                <p>No yield bonus</p>
+                <p>No stones</p>
+                <p>More weeds</p>
+              </article>
+              <article class="machine">
+                <header>Direct Sowing Machine</header>
+                <p>No yield bonus</p>
+                <p>No stones</p>
+                <p>More weeds</p>
+              </article>
+          </article>
+        </div>
+      </div>
+
+      <article id="stone-picking">
+        <h3>Stone picking</h3>
+        <p class="subtitle"><em>Optional</em>, avoids damage to machines.</p>
+        <div class="grid">
+          <article class="machine">
+            <header>Tractor</header>
+            <p>Pulls equipment.</p>
+          </article>
+          <article class="machine">
+            <header>Stone picker</header>
+            <p>Collects <mark class="stones" data-tooltip="Can be sold.">Stones</mark>.</p>
+          </article>
+        </div>
+      </article>
+
+      <article id="seeding">
+        <h3>Seeding</h3>
+        <div class="grid">
+          <article class="machine wheat barley oat canola sorghum soybeans oilseed-radish grass">
+            <header>Seeder</header>
+            <p>Plants Wheat, Barley, Oat, Canola, Sorghum, Soybeans, Oilseed Radish, Grass.</p>
+            <p>Uses <mark class="seeds">Seeds</mark>.</p>
+          </article>
+
+          <article class="machine corn sugar-beet cotton sunflowers soybeans">
+            <header>Planter</header>
+            <p>Plants Corn, Sugar beet, Cotton, Sunflowers, Soybeans.</p>
+            <p>Uses <mark class="seeds">Seeds</mark>.</p>
+          </article>
+
+          <article class="machine potatoes">
+            <header>Potato Planter</header>
+            <p>Plants Potatoes.</p>
+            <p>Uses <mark class="seeds">Seeds</mark>.</p>
+          </article>
+
+          <article class="machine sugarcane">
+            <header>Sugarcane Planter</header>
+            <p>Plants Sugarcane.</p>
+            <p>Uses <mark class="seeds">Seeds</mark>.</p>
+          </article>
+
+          <article class="machine trees poplar">
+            <header>Tree Planter</header>
+            <p>Plants Trees, Poplar.</p>
+            <p>Uses <mark class="trees">Trees</mark>, <mark class="poplar">Poplar</mark>.</p>
+          </article>
+        </div>
+      </article>
+
+      <article id="soil-rolling">
+        <h3>Soil Rolling</h3>
+        <p class="subtitle"><em>Optional</em>, +2.5% yield.</p>
+        <p>Pushes small stones back into the soil. Small stones won't damage seeders and planters. The yield bonus applies even if there are no stones.</p>
+        <div class="grid">
+          <article class="machine">
+            <header>Tractor</header>
+            <p>Pulls equipment.</p>
+          </article>
+          <article class="machine">
+            <header>Soil Roller</header>
+            <p>Removes small stones.</p>
+          </article>
+        </div>
+      </article>
+
+    </section>
+    <section id="planting-2" class="container-fluid">
+      <h2>Planting, day 2</h2>
+
+      <article id="weed-removal" class="cultivating">
+        <h3>Weed removal</h3>
+        <p class="subtitle"><em>Optional</em>, up to +20% yield.</p>
+        <div class="grid">
+          <article class="machine not-potatoes">
+            <header>Weeder</header>
+            <p>Small weeds.</p>
+            <p>All crops except row crops (potatoes).</p>
+            <p>Up to +20% yield.</p>
+          </article>
+          <article class="machine">
+            <header>Hoe</header>
+            <p>Small, medium weeds.</p>
+            <p>All crops.</p>
+            <p>Up to +20% yield.</p>
+          </article>
+          <article class="machine">
+            <header>Sprayer</header>
+            <p>Small, medium, large weeds.</p>
+            <p>All crops.</p>
+            <p>Up to +5% yield (+15% herbicide penalty).</p>
+            <p>Uses <mark class="herbicide" data-tooltip="Found in the pallets section of the shop.">Herbicide</mark>.</p>
+          </article>
+        </div>
+      </article>
+
+      <article id="fertilizing-2" class="fertilizing">
+        <h3>Fertilizing</h3>
+        <p class="subtitle"><em>Optional</em>, +22.5% yield.</p>
+        <p>Both fertilizing steps can also be done by harvesting Oilseed Radish.</p>
+        <div class="grid">
+          <article class="machine solid-fertilizer">
+            <header>Fertilizer Spreader</header>
+            <p>Uses <mark class="solid-fertilizer">Solid fertilizer</mark>.</p>
+          </article>
+          <article class="machine liquid-fertilizer">
+            <header>Fertilizer Sprayer</header>
+            <p>Uses <mark class="liquid-fertilizer">Liquid fertilizer</mark>.</p>
+          </article>
+          <article class="machine slurry">
+            <header>Slurry Tank</header>
+            <p>Uses <mark class="slurry">Slurry</mark>.</p>
+          </article>
+          <article class="machine manure">
+            <header>Manure Spreader</header>
+            <p>Uses <mark class="manure">Manure</mark>.</p>
+          </article>
+          <article class="machine digestate">
+            <header>Slurry Tank</header>
+            <p>Uses <mark class="digestate">Digestate</mark>.</p>
+          </article>
+        </div>
+      </article>
+    </section>
+    <section id="harvesting" class="container-fluid">
+      <h3>Harvesting</h3>
+
+      <div class="grid">
+        <div>
+          <article id="harvesting-grains" class="wheat">
+            <h3>Harvesting grains</h3>
+            <p class="subtitle">100% yield.</p>
+            <div class="grid">
+              <article class="machine">
+                <header>Harvester</header>
+                <p>Requires a header.</p>
+              </article>
+              <article class="machine">
+                <header>Harvester header</header>
+                <p>Attached to a harvester.</p>
+              </article>
+              <article class="machine">
+                <header>Harvester trailer</header>
+                <p>Transports header on roads.</p>
+              </article>
+              <article class="machine">
+                <header>Tractor and Trailer</header>
+                <p>Transports the harvested crop.</p>
+              </article>
+            </div>
+          </article>
+          <article id="harvesting-straw" class="wheat barley oat">
+            <h3>Harvesting straw</h3>
+            <p>By-product of harvesting wheat, barley, and oat.</p>
+            <div class="grid">
+              <article class="machine forage-wagon">
+                <header>Forage wagon</header>
+                <p>Directly collect the straw.</p>
+              </article>
+              <article>
+                <header>Baling</header>
+                <p>Turn straw into bales.</p>
+              </article>
+            </div>
+          </article>
+        </div>
+        <article id="harvesting-chaff grass corn wheat barley oat sorghum canola soybeans sunflowers">
+          <h3>Harvesting Chaff</h3>
+          <p class="subtitle">Yield converted into chaff.</p>
+          <p>Must be harvested <em>before</em> the final growth stage (except grass).</p>
+          <div class="grid">
+            <article class="machine">
+              <header>Forage Harvester</header>
+              <p>Requires a header.</p>
+            </article>
+            <article class="machine">
+              <header>Forage harvester header</header>
+              <p>Attached to a harvester.</p>
+            </article>
+            <article class="machine">
+              <header>Tractor and Trailer</header>
+              <p>Transports the chaff.</p>
+            </article>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="container-fluid">
+    <a data-theme-toggle>Toggle light/dark mode.</a>
+  </footer>
+  <script src="index.js"></script>
+</body>
+</html>

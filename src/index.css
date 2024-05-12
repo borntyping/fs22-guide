@@ -1,0 +1,231 @@
+/* :root {
+        background-color: #327a46;
+      } */
+
+header {
+  text-align: center;
+}
+
+/* Use a theme colour for <mark> elements. */
+mark {
+  background-color: var(--pico-primary-underline);
+}
+
+/* Avoid trailing margins at the bottom of a card. */
+article :last-child,
+article :last-child > article {
+  margin-bottom: 0;
+}
+
+:is(h1, h2, h3, h4, h5):has(+ .subtitle) {
+  margin-bottom: 0;
+}
+
+#guide {
+  /* Growth */
+  --fs22-growth-stubble-tillage: #7ab797;
+  --fs22-growth-cultivated: #58a5db;
+  --fs22-growth-plowed: #553d53;
+  --fs22-growth-seedbed: #51d4ad;
+  --fs22-growth-growing-1: #83c722;
+  --fs22-growth-growing-2: #72b622;
+  --fs22-growth-growing-3: #62a61c;
+  --fs22-growth-growing-4: #51951c;
+  --fs22-growth-growing-5: #408516;
+  --fs22-growth-growing-6: #327516;
+  --fs22-growth-growing-7: #226316;
+  --fs22-growth-growing-8: #0d530d;
+  --fs22-growth-ready-to-harvest: #e4971c;
+  --fs22-growth-harvested: #8c5aa1;
+  --fs22-growth-remove-foliage: #d a3d1c;
+  --fs22-growth-withered: #6a3d1c;
+
+  /* Soil composition */
+  --fs22-soil-weed-1: #83c722;
+  --fs22-soil-weed-2: #83c722;
+  --fs22-soil-weed-3: #83c722;
+  --fs22-soil-weed-4: #83c722;
+  --fs22-soil-weed-5: #83c722;
+  --fs22-soil-fertilized-1: #1656c9;
+  --fs22-soil-fertilized-2: #003894;
+  --fs22-soil-needs-lime: #51d4ad;
+  --fs22-soil-needs-rolling: #58a5db;
+  --fs22-soil-mulched: #553d53;
+  --fs22-soil-stones-small: #ffd800;
+  --fs22-soil-stones-medium: #ed8000;
+  --fs22-soil-stones-large: #d91600;
+
+  .lime { background-color: var(--fs22-soil-needs-lime); }
+
+  /* Crop types */
+  --fs22-crop-wheat: #ceab4f;
+  --fs22-crop-barley: #aaaaaa;
+  --fs22-crop-canola: #aaaaaa;
+  --fs22-crop-oat: #b36a2e;
+  --fs22-crop-corn: #e89a2e;
+  --fs22-crop-sunflowers: #eacb22;
+  --fs22-crop-soybeans: #81852e;
+  --fs22-crop-potatoes: #8c634f;
+  --fs22-crop-sugar-beet: #d9a38f;
+  --fs22-crop-sugarcane: #c2d79a;
+  --fs22-crop-cotton: #f2e8e6;
+  --fs22-crop-sorghum: #704f42;
+  --fs22-crop-grapes: #5b5a8d;
+  --fs22-crop-olives: #523b50;
+  --fs22-crop-poplar: #5f7266;
+  --fs22-crop-grass: #aaaaaa;
+  --fs22-crop-oilseed-radish: #49b484;
+  --fs22-crop-red-beet: #b6165b;
+  --fs22-crop-carrots: #e06635;
+  --fs22-crop-parsnip: #d7be9b;
+
+  mark.wheat { background-color: var(--fs22-crop-wheat); }
+  mark.barley { background-color: var(--fs22-crop-barley); }
+  mark.canola { background-color: var(--fs22-crop-canola); }
+  mark.oat { background-color: var(--fs22-crop-oat); }
+  mark.corn { background-color: var(--fs22-crop-corn); }
+  mark.sunflowers { background-color: var(--fs22-crop-sunflowers); }
+  mark.soybeans { background-color: var(--fs22-crop-soybeans); }
+  mark.potatoes { background-color: var(--fs22-crop-potatoes); }
+  mark.sugar-beet { background-color: var(--fs22-crop-sugar-beet); }
+  mark.sugarcane { background-color: var(--fs22-crop-sugarcane); }
+  mark.cotton { background-color: var(--fs22-crop-cotton); }
+  mark.sorghum { background-color: var(--fs22-crop-sorghum); }
+  mark.grapes { background-color: var(--fs22-crop-grapes); }
+  mark.olives { background-color: var(--fs22-crop-olives); }
+  mark.poplar { background-color: var(--fs22-crop-poplar); }
+  mark.grass { background-color: var(--fs22-crop-grass); }
+  mark.oilseed-radish { background-color: var(--fs22-crop-oilseed-radish); }
+  mark.red { background-color: var(--fs22-crop-red-beet); }
+  mark.carrots { background-color: var(--fs22-crop-carrots); }
+  mark.parsnip { background-color: var(--fs22-crop-parsnip); }
+
+  /* Stages */
+  #liming h3 { color: var(--fs22-soil-needs-lime); }
+  #fertilizing h3 { color: var(--fs22-soil-fertilized-1); }
+  #stone-picking h3 { color: var(--fs22-soil-stones-medium); }
+  #soil-rolling h3 { color: var(--fs22-soil-stones-small); }
+  #weeding h3 { color: var(--fs22-soil-weed-1); }
+
+
+  --disabled-opacity: .1;
+  --enabled-opacity: 1 !important;
+
+  --neutral-border: 2px solid var(--pico-color-slate-500);
+  --problem-border: 2px solid var(--pico-color-red-500);
+  --required-border: 2px solid var(--pico-color-green-500) !important;
+
+  /* Hide "Liming" section when "Lime needed" is not checked. */
+  &:has(input[name="lime"]:not(:checked)) #liming { opacity: var(--disabled-opacity); }
+
+  /* Toggle between plowing and cultivating sections. */
+  &:has(input[name="plowing"]:checked) .cultivating { opacity: var(--disabled-opacity); }
+  &:has(input[name="plowing"]:not(:checked)) .plowing {opacity: var(--disabled-opacity); }
+
+
+  &:has(input[name="fertilizer"]:checked) {
+    article.solid-fertilizer,
+    article.liquid-fertilizer,
+    article.slurry,
+    article.manure,
+    article.digestate {
+      opacity: var(--disabled-opacity);
+      &.machine {
+        border: var(--neutral-border);
+      }
+    }
+
+    &:has(input[value="solid-fertilizer"]:checked) article.solid-fertilizer,
+    &:has(input[value="liquid-fertilizer"]:checked) article.liquid-fertilizer,
+    &:has(input[value="slurry"]:checked) article.slurry,
+    &:has(input[value="manure"]:checked) article.manure,
+    &:has(input[value="digestate"]:checked) article.digestate {
+      opacity: var(--enabled-opacity);
+      &.machine {
+        border: var(--required-border);
+      }
+    }
+
+    &:has(input[value="catch-crop"]:checked) .fertilizing {
+      opacity: var(--disabled-opacity);
+      &.machine {
+        border: var(--neutral-border);
+      }
+    }
+  }
+
+  &:has(input[name="crop"]:checked) {
+    .wheat,
+    .barley,
+    .canola,
+    .oat,
+    .corn,
+    .sunflowers,
+    .soybeans,
+    .potatoes,
+    .sugar-beet,
+    .sugarcane,
+    .cotton,
+    .sorghum,
+    .grapes,
+    .olives,
+    .poplar,
+    .grass,
+    .oilseed-radish,
+    .red,
+    .carrots,
+    .parsnip {
+      opacity: var(--disabled-opacity);
+      &.machine {
+        border: var(--neutral-border);
+      }
+    }
+
+    &:has(input[value="wheat"]:checked) .wheat,
+    &:has(input[value="barley"]:checked) .barley,
+    &:has(input[value="canola"]:checked) .canola,
+    &:has(input[value="oat"]:checked) .oat,
+    &:has(input[value="corn"]:checked) .corn,
+    &:has(input[value="sunflowers"]:checked) .sunflowers,
+    &:has(input[value="soybeans"]:checked) .soybeans,
+    &:has(input[value="potatoes"]:checked) .potatoes,
+    &:has(input[value="sugar-beet"]:checked) .sugar-beet,
+    &:has(input[value="sugarcane"]:checked) .sugarcane,
+    &:has(input[value="cotton"]:checked) .cotton,
+    &:has(input[value="sorghum"]:checked) .sorghum,
+    &:has(input[value="grapes"]:checked) .grapes,
+    &:has(input[value="olives"]:checked) .olives,
+    &:has(input[value="poplar"]:checked) .poplar,
+    &:has(input[value="grass"]:checked) .grass,
+    &:has(input[value="oilseed-radish"]:checked) .oilseed-radish,
+    &:has(input[value="red"]:checked) .red,
+    &:has(input[value="carrots"]:checked) .carrots,
+    &:has(input[value="parsnip"]:checked) .parsnip {
+      opacity: 1 !important;
+      &.machine {
+        border: var(--required-border);
+      }
+    }
+
+    &:has(input[value="potatoes"]:checked) .not-potatoes {
+      opacity: var(--disabled-opacity);
+      border: var(--problem-border);
+    }
+  }
+
+
+  .machine {
+    background: var(--pico-background-color);
+    font-size: 0.75em;
+
+    header {
+      font-weight: bold;
+    }
+  }
+
+  /* Default values for tooltips. */
+
+  .lime[data-tooltip]::before {
+    content: "Acquired for free at a lime station, or brought at the shop.";
+  }
+}
